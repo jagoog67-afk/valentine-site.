@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Surprise</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #ffc0cb;
+    overflow-x: hidden;
+  }
+  .page { display: none; text-align: center; padding: 50px; min-height: 100vh; }
+  .active { display: block; }
+  h1 { color: #fff; font-size: 3em; text-shadow: 2px 2px #ff69b4; }
+  button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .image-gallery img { max-width: 90%; margin: 20px 0; border-radius: 15px; }
+</style>
+</head>
+<body>
+
+<!-- Page 1 -->
+<div class="page active" id="page1">
+  <h1>Will you be my Valentine?</h1>
+  <button onclick="nextPage()">Yes 💖</button>
+  <button onclick="noClicked()">No 😢</button>
+</div>
+
+<!-- Page 2 -->
+<div class="page" id="page2">
+  <h1>This is Us 💕</h1>
+  <div class="image-gallery">
+    <img src="https://i.imgur.com/KgkMdDm.jpeg" alt="Photo 1">
+    <img src="https://i.imgur.com/f387eHb.jpeg" alt="Photo 2">
+    <img src="https://i.imgur.com/RYl0GJR.jpeg" alt="Photo 3">
+  </div>
+  <p style="color:#fff; font-size:1.5em;">Every moment with you is special. I love you so much! 🥰</p>
+</div>
+
+<script>
+function nextPage() {
+  document.getElementById('page1').classList.remove('active');
+  document.getElementById('page2').classList.add('active');
+}
+function noClicked() {
+  alert("Come on, you know you want to! 💖");
+}
+</script>
+
+</body>
+</html>
