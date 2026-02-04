@@ -3,59 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentine Surprise</title>
+<title>My Valentine 🤍</title>
+
 <style>
   body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: #ffc0cb;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, #ffb6c1, #ffc0cb);
     overflow-x: hidden;
   }
-  .page { display: none; text-align: center; padding: 50px; min-height: 100vh; }
-  .active { display: block; }
-  h1 { color: #fff; font-size: 3em; text-shadow: 2px 2px #ff69b4; }
+
+  .page {
+    display: none;
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .active {
+    display: block;
+  }
+
+  h1 {
+    color: white;
+    font-size: 2.7em;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px #ff69b4;
+  }
+
+  p {
+    color: white;
+    font-size: 1.35em;
+    max-width: 850px;
+    margin: 0 auto 22px;
+    line-height: 1.65;
+  }
+
   button {
     background-color: #ff69b4;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 15px 34px;
     font-size: 1.2em;
-    margin: 20px;
+    margin: 18px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 14px;
+    transition: transform 0.2s ease;
   }
-  .image-gallery img { max-width: 90%; margin: 20px 0; border-radius: 15px; }
+
+  button:hover {
+    transform: scale(1.08);
+  }
+
+  .gallery img {
+    max-width: 90%;
+    margin: 20px 0;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(255,105,180,0.6);
+  }
+
+  .verse {
+    font-style: italic;
+    font-size: 1.25em;
+    opacity: 0.95;
+  }
 </style>
 </head>
+
 <body>
 
-<!-- Page 1 -->
-<div class="page active" id="page1">
-  <h1>Will you be my Valentine?</h1>
-  <button onclick="nextPage()">Yes 💖</button>
-  <button onclick="noClicked()">No 😢</button>
+<!-- INTRO -->
+<div class="page active" id="intro">
+  <h1>Before I ask you anything 🤍</h1>
+
+  <p>Before I ask you anything, I want you to know this loving you has changed me in the best ways.</p>
+
+  <p>Even with distance between us, you’ve remained constant in my prayers, in my thoughts, and in my heart.</p>
+
+  <p>You’ve taught me patience, tenderness, and what it means to choose someone intentionally.</p>
+
+  <p>Every day, I thank GOD for you and for the love we are still growing into.</p>
+
+  <button onclick="goTo('question')">Continue</button>
 </div>
 
-<!-- Page 2 -->
-<div class="page" id="page2">
-  <h1>This is Us 💕</h1>
-  <div class="image-gallery">
-    <img src="https://i.imgur.com/KgkMdDm.jpeg" alt="Photo 1">
-    <img src="https://i.imgur.com/f387eHb.jpeg" alt="Photo 2">
-    <img src="https://i.imgur.com/RYl0GJR.jpeg" alt="Photo 3">
+<!-- QUESTION -->
+<div class="page" id="question">
+  <h1>Will you be my Valentine?</h1>
+
+  <button onclick="goTo('ending')">Yes 🤍</button>
+  <button onclick="noClicked()">No</button>
+</div>
+
+<!-- ENDING -->
+<div class="page" id="ending">
+  <h1>This is Us</h1>
+
+  <div class="gallery">
+    <img src="https://i.imgur.com/KgkMdDm.jpeg">
+    <img src="https://i.imgur.com/f387eHb.jpeg">
+    <img src="https://i.imgur.com/RYl0GJR.jpeg">
   </div>
-  <p style="color:#fff; font-size:1.5em;">Every moment with you is special. I love you so much! 🥰</p>
+
+  <p>Thank you for choosing me and for trusting me with your heart.</p>
+
+  <p>I don’t take what we have lightly.</p>
+
+  <p>I hold it with care, with prayer, and with intention.</p>
+
+  <p>No matter the distance, my commitment to you is real.</p>
+
+  <p>I believe what we are building is guided by GOD, and that gives me peace, confidence, and hope.</p>
+
+  <p><strong>Always you. Always us, Rato laka.</strong></p>
+
+  <p class="verse">
+    “Where you go I will go, and where you stay I will stay.”<br>
+    — Ruth 1:16
+  </p>
 </div>
 
 <script>
-function nextPage() {
-  document.getElementById('page1').classList.remove('active');
-  document.getElementById('page2').classList.add('active');
-}
-function noClicked() {
-  alert("Come on, you know you want to! 💖");
-}
+  function goTo(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+
+  function noClicked() {
+    alert("Nice try 🤍");
+  }
 </script>
 
 </body>
